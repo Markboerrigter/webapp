@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Magazine Tags Scraper</title>
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <nav>
+
+            </nav>
+            <h3 class="text-muted">Magazine Tags Scraper</h3>
+        </div>
+        <h2> Alle data is verwerkt. Wil je de data downloaden?</h2>
+        <form action=  {{ filename }}>
+          <button type="submit" >Data binnenhalen!</button>
+        </form>
+
+        <form action= "/clickhome">
+          <button type="submit" >Click data verzamelen</button>
+        </form>
+        <footer class="footer">
+            <p>© Mark Romme</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Magazine Tags Scraper</title>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+
+    var source = new EventSource("/progress");
+    source.onmessage = function(event) {
+        $('.progress-bar').css('width', event.data+'%').attr('aria-valuenow', event.data);
+    }
+    </script>
+     -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+     <script type="text/javascript">// <![CDATA[
+             function loader(){
+
+                 $("#content").hide();
+                 $("#foot").hide();
+                 $("#loading").show();
+             }
+     // ]]></script>
+     <style>
+       div#loading {
+         position: absolute; display: none; width: 100%; height: 100%; background: url('/static/source.gif') no-repeat center center;
+     }
+     </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="content">
+        <h2> XML is up to date, Let's retrieve tags from the folder</h2>
+        <form action="/retrieveTags">
+          <button type="submit" onclick="loader();">Retrieve tags!</button>
+        </form>
+        </div>
+        <br>
+        <div id="loading"></div>
+        <footer class="footer" id="foot">
+            <p>© Mark Romme</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

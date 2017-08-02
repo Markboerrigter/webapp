@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Magazine Tags Scraper</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <script type="text/javascript">// <![CDATA[
+            function loader(){
+
+                $("#content").hide();
+                $("#foot").hide();
+                $("#loading").show();
+            }
+    // ]]></script>
+    <style>
+      div#loading {
+        position: absolute; display: none; width: 100%; height: 100%; background: url('/static/source.gif') no-repeat center center;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="content">
+            <nav>
+            </nav>
+            <h3 class="text-muted">Upload completed</h3>
+            {% if foldernaam %}
+              Je zoekt data over de folder van de: {{ foldernaam }}
+            {% endif %} <br>
+            {% if fid %}
+              Het id van de folder is: {{ fid }}
+            {% endif %}<br>
+            <hr>
+            <hr>
+
+            <br>
+            <br>
+            <form action="/clickdata">
+              <button type="submit" onclick="loader();">Genereer de Click data!</button>
+            </form>
+
+        </div>
+        <div id="loading"></div>
+        <footer class="footer" id="foot">
+            <p>© Mark Romme</p>
+        </footer>
+
+    </div>
+</body>
+
+
+</html>

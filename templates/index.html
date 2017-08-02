@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Magazine Tags Scraper</title>
+
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <nav>
+
+            </nav>
+            <h3 class="text-muted">Magazine Tags Scraper</h3>
+        </div>
+
+        <div class="row marketing">
+
+                <h4>Stap 1</h4>
+                <p>Geef hieronder de naam van de folder en het folder id in!</p>
+                <form action="/folder_data.php">
+                <p> Foldernaam: <select name="Foldernaam">
+                                    {% for x in retailers %}
+                                    <option value="{{ x }}"{% if loop.first %} SELECTED{% endif %}>{{ x }}</option>
+                                    {% endfor %}
+                                </select>
+                Folder id:
+                                  <input type="text" name="fid"><br>
+                                  <input type="submit" value="Submit">
+                </form>
+                </p>
+        </div>
+
+        <footer class="footer">
+            <p>© Mark Romme</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

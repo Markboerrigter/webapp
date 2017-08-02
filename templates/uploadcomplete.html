@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Magazine Tags Scraper</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <script type="text/javascript">// <![CDATA[
+            function loader(){
+
+                $("#content").hide();
+                $("#foot").hide();
+                $("#loading").show();
+            }
+    // ]]></script>
+    <style>
+      div#loading {
+        position: absolute; display: none; width: 100%; height: 100%; background: url('/static/source.gif') no-repeat center center;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="content">
+            <nav>
+            </nav>
+            <h3 class="text-muted">Upload completed</h3>
+            {% if foldernaam %}
+              Je hebt een folder toegevoegd van de: {{ foldernaam }}
+            {% endif %} <br>
+            {% if fid %}
+              Het id van de folder is: {{ fid }}
+            {% endif %}<br>
+            {% if filename %}
+              Het csv bestand dat hierbij hoort heet: {{ filename }}
+            {% endif %}<br>
+            <hr>
+            <hr>
+            Nu alle gegevens bekend zijn en het data bestand is toegevoegd kunnen we de databases gaan updaten!
+            <br>
+            Moet de XML worden geupdate of niet?
+            <br>
+            <br>
+            <form action="/updateXML/ja">
+              <button type="submit" onclick="loader();">Update de XML!</button>
+            </form>
+            <br>
+            <br>
+            <button type="submit" onclick="location.href='/updateXML/nee'">Update de XML niet!</button>
+
+            <br>
+        </div>
+        <div id="loading"></div>
+        <footer class="footer" id="foot">
+            <p>© Mark Romme</p>
+        </footer>
+
+    </div>
+</body>
+
+
+</html>
