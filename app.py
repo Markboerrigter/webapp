@@ -192,6 +192,8 @@ def HaiXML(ans):
 def getTags():
     links, csv_name = retrieve_tags(session)
     session['download_path'] = '/' + csv_name
+
+    print('render templatje!')
     return render_template('finishpage.html', filename = session['download_path'])
 
 @app.route('/csv_output/<filename>', methods=['GET', 'POST'])
